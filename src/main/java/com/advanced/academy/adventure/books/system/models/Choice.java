@@ -1,10 +1,23 @@
 package com.advanced.academy.adventure.books.system.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "choice")
 public class Choice {
+    @Id
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
+    @ManyToOne
+    @JoinColumn(name = "step_given_in_id")
+    private Step stepGivenIn;
+
+    @ManyToOne
+    @JoinColumn(name = "result_in_step_id")
     private Step resultInStep;
-    private Integer reputationChange;
+
 
     public Integer getId() {
         return id;
@@ -26,11 +39,12 @@ public class Choice {
         this.resultInStep = resultInStep;
     }
 
-    public Integer getReputationChange() {
-        return reputationChange;
+
+    public Step getStepGivenIn() {
+        return stepGivenIn;
     }
 
-    public void setReputationChange(Integer reputationChange) {
-        this.reputationChange = reputationChange;
+    public void setStepGivenIn(Step stepGivenIn) {
+        this.stepGivenIn = stepGivenIn;
     }
 }

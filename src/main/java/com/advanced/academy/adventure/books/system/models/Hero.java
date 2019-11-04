@@ -1,12 +1,24 @@
 package com.advanced.academy.adventure.books.system.models;
 
-public class Hero {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "heroes")
+public class Hero {
+    @Id
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "nick_Name")
     private String nickName;
+    @Column(name = "current_reputation")
     private Integer currentReputation;
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
     private Customer customer;
+    @ManyToOne
+    @JoinColumn(name = "adventure_id")
     private Adventure adventure;
+    @Column(name = "number_of_lives")
     private Integer numberOfLives;
 
 

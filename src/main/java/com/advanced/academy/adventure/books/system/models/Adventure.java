@@ -1,13 +1,34 @@
 package com.advanced.academy.adventure.books.system.models;
 
-public class Adventure {
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
+@Entity
+@Table(name = "adventures")
+public class Adventure {
+    @Id
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "story")
     private String story;
+    @OneToOne
+    @JoinColumn(name = "first_step_id")
     private Step firstStep;
+    @Column(name = "number_of_lives")
     private Integer numberOfLives;
+    @Column(name = "starting_reputation")
     private Integer startingReputation;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "adventures_tags",
+            joinColumns = { @JoinColumn(name = "adventure_id") },
+            inverseJoinColumns = { @JoinColumn(name = "tag_id") }
+    )
+    Set<Tag> tags = new HashSet<>();
 
     public Integer getId() {
         return id;

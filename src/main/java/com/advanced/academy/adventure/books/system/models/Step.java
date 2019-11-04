@@ -2,28 +2,30 @@ package com.advanced.academy.adventure.books.system.models;
 
 import com.advanced.academy.adventure.books.system.models.enums.EndGameType;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "Step")
 public class Step {
+
+
+    @Id
+    @Column(name = "Id")
     private Integer id;
-    private Integer reputationChange;
+    @Column(name = "end_game_type")
+    @Enumerated(EnumType.STRING)
     private EndGameType endGameType;
+    @Column(name = "ends_game")
     private boolean endsGame = false;
+    @Column(name = "story", columnDefinition = "TEXT")
     private String story;
+    @OneToMany(mappedBy = "stepGivenIn")
     private List<Choice> choiceList = new ArrayList<>();
 
     public Integer getId() {
         return id;
-    }
-
-
-    public Integer getReputationChange() {
-        return reputationChange;
-    }
-
-    public void setReputationChange(Integer reputationChange) {
-        this.reputationChange = reputationChange;
     }
 
     public EndGameType getEndGameType() {
@@ -57,4 +59,6 @@ public class Step {
     public void setChoiceList(List<Choice> choiceList) {
         this.choiceList = choiceList;
     }
+
+
 }
