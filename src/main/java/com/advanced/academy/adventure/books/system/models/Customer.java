@@ -11,7 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customers")
-@Where(clause = "isDeleted = false")
+@Where(clause = "is_deleted = false")
 public class Customer {
 
     @Id
@@ -32,7 +32,7 @@ public class Customer {
     @Column(name = "user_name")
     private String userName;
 
-    @Column(name = "is_delete")
+    @Column(name = "is_deleted")
     boolean isDeleted = false;
 
 

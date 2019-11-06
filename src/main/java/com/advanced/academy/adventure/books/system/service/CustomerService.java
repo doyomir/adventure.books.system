@@ -5,6 +5,8 @@ import com.advanced.academy.adventure.books.system.repository.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class CustomerService {
@@ -25,7 +27,13 @@ public class CustomerService {
     }
 
     public Customer getCustomer(Integer customerId) {
-        return null;
+
+        Optional<Customer> customer = customerRepository.findById(customerId);
+
+        if(!customer.isPresent()){
+            throw new RuntimeException("Customer not found!");
+        }
+        return customer.get();
     }
 
     private void validateAndCreateCustomer(Customer customer) {
@@ -34,8 +42,7 @@ public class CustomerService {
     }
 
     private void updateCustomer(Customer customer) {
-
-
+        customerRepository.save(customer);
     }
 
 

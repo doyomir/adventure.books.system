@@ -43,7 +43,7 @@ public class CustomerController {
         StringWriter sw = new StringWriter();
         e.printStackTrace(new PrintWriter(sw));
         String exceptionAsString = sw.toString();
-        return  e.getStackTrace().toString();
+        return  exceptionAsString;
 
     }
 }
