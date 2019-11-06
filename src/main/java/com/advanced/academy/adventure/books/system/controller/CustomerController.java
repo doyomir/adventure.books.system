@@ -5,6 +5,10 @@ import com.advanced.academy.adventure.books.system.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.lang.model.element.NestingKind;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 
 @RestController
 @RequestMapping("customer")
@@ -20,10 +24,7 @@ public class CustomerController {
     @PostMapping
     public void createOrUpdateCustomer(@RequestBody Customer customer) {
          customerService.createOrUpdateCustomer(customer);
-
     }
-
-
 
     @GetMapping("/{customerId}")
     public Customer getCustomer(@PathVariable("customerId") Integer customerId ){
@@ -34,6 +35,15 @@ public class CustomerController {
     @DeleteMapping("/{customerId}")
     public void deleteCustomer(@PathVariable("customerId") Integer customerId ){
          customerService.deleteCustomer(customerId);
+
+    }
+
+    @ExceptionHandler({Exception.class})
+    public String onException(Exception e){
+        StringWriter sw = new StringWriter();
+        e.printStackTrace(new PrintWriter(sw));
+        String exceptionAsString = sw.toString();
+        return  e.getStackTrace().toString();
 
     }
 }

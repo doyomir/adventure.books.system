@@ -21,7 +21,7 @@ public class CustomerService {
             validateAndCreateCustomer(customer);
             return;
         }
-        validateAndUpdateCustomer(customer);
+        updateCustomer(customer);
     }
 
     public Customer getCustomer(Integer customerId) {
@@ -29,19 +29,17 @@ public class CustomerService {
     }
 
     private void validateAndCreateCustomer(Customer customer) {
-        validateCustomer(customer);
+        customerRepository.save(customer);
 
     }
 
-    private void validateAndUpdateCustomer(Customer customer) {
-        validateCustomer(customer);
+    private void updateCustomer(Customer customer) {
+
 
     }
 
-    private void validateCustomer(Customer customer) {
-
-    }
 
     public void deleteCustomer(Integer customerId) {
+        customerRepository.deactivateCustomer(customerId);
     }
 }
