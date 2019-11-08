@@ -1,5 +1,8 @@
 package com.advanced.academy.adventure.books.system.models;
 
+import com.advanced.academy.adventure.books.system.models.adventure.Adventure;
+import com.advanced.academy.adventure.books.system.models.adventure.Step;
+
 import javax.persistence.*;
 
 @Entity

@@ -1,5 +1,6 @@
-package com.advanced.academy.adventure.books.system.models;
+package com.advanced.academy.adventure.books.system.models.adventure;
 
+import com.advanced.academy.adventure.books.system.models.adventure.Choice;
 import com.advanced.academy.adventure.books.system.models.enums.EndGameType;
 
 import javax.persistence.*;

@@ -11,7 +11,7 @@ import java.io.StringWriter;
 
 
 @RestController
-@RequestMapping("customer")
+@RequestMapping("api/customer")
 public class CustomerController {
 
     private final CustomerService customerService;

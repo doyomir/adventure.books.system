@@ -1,4 +1,7 @@
-package com.advanced.academy.adventure.books.system.models;
+package com.advanced.academy.adventure.books.system.models.adventure;
+
+import com.advanced.academy.adventure.books.system.models.Tag;
+import com.advanced.academy.adventure.books.system.models.adventure.Step;
 
 import javax.persistence.*;
 import java.util.HashSet;
