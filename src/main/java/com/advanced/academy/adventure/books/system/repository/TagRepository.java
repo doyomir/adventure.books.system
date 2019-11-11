@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 public interface TagRepository extends CrudRepository<Tag, Integer>, GetReference {
-    @Query("SELECT t FROM Tag t WHERE :adventure IN(adventures")
+    @Query("SELECT t FROM Tag t WHERE :adventure IN(adventures)")
     Optional<List<Tag>> findAllByAdventure(@Param("adventure") Adventure adventure);
 
 

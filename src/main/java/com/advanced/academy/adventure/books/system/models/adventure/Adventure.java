@@ -13,15 +13,20 @@ public class Adventure {
     @Id
     @Column(name = "id")
     private Integer id;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "story")
     private String story;
+
     @OneToOne
     @JoinColumn(name = "first_step_id")
     private Step firstStep;
+
     @Column(name = "number_of_lives")
     private Integer numberOfLives;
+
     @Column(name = "starting_reputation")
     private Integer startingReputation;
 

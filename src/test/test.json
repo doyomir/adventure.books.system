@@ -1,0 +1,33 @@
+{
+
+  "firstStep": {
+    "choiceList": [
+      {
+        "stepGivenIn": {},
+        "resultInStep": {
+          "choiceList": [
+            {
+              "stepGivenIn": {},
+              "resultInStep": {
+                "choiceList": [
+                  {
+                    "stepGivenIn": {},
+                    "resultInStep": {
+
+                    }
+                  }
+                ]
+
+              }
+
+            }
+
+          ]
+
+        }
+        }
+
+    ]
+
+  }
+}
