@@ -1,33 +1,41 @@
 {
-
-  "firstStep": {
-    "choiceList": [
+  "name": "Neshto Quest",
+  "story": "Sabujdash se v gorata. Okasan i izplashen.poslednoto neshto koeto pomnish e edna butilka rom.",
+  "FirstStep": {
+    "Story": "Izpravq6 se i vijdash butilkata na zemqta. Kakvo pravish",
+    "chiceList": [
       {
-        "stepGivenIn": {},
+        "description": "Otpivash ot butilkata",
         "resultInStep": {
-          "choiceList": [
+          "story": "Sabujdash se v gorata. Okasan i izplashen.poslednoto neshto koeto pomnish e edna butilka rom.",
+          "chiceList": [
             {
-              "stepGivenIn": {},
+              "description": "Otpivash ot butilkata",
               "resultInStep": {
-                "choiceList": [
-                  {
-                    "stepGivenIn": {},
-                    "resultInStep": {
-
-                    }
-                  }
+                "story": "Sabujdash se v gorata. Okasan i izplashen.poslednoto neshto koeto pomnish e edna butilka rom.",
+                "chiceList": [
                 ]
-
               }
-
+            },
+            {
+              "description": "Oglejdash naokolo",
+              "resultInStep": {
+                "story": "Oglejdash se naokolo i namirash kompaniqta s koqto si do6yl",
+                "endsGame": true,
+                "endsGameType": "Good"
+              }
             }
-
           ]
-
         }
+      },
+      {
+        "description": "Oglejdash naokolo",
+        "resultInStep": {
+          "story": "Oglejdash se naokolo i namirash kompaniqta s koqto si do6yl",
+          "endsGame": true,
+          "endsGameType": "Good"
         }
-
+      }
     ]
-
   }
 }

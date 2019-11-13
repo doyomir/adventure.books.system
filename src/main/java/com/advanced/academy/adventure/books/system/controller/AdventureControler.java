@@ -6,6 +6,8 @@ import com.advanced.academy.adventure.books.system.service.AdventureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/adventure")
 public class AdventureControler {
@@ -18,12 +20,12 @@ public class AdventureControler {
     }
 
     @PostMapping
-    public void createOrUpdate(@RequestBody Adventure adventure){
-         adventureService.createOrUpdate(adventure);
+    public Adventure createOrUpdate(@RequestBody Adventure adventure){
+         return adventureService.createOrUpdate(adventure);
     }
 
     @GetMapping
-    public void getAll(){
-
+    public List<Adventure> getAll(){
+            return adventureService.getAll();
     }
 }

@@ -11,6 +11,7 @@ import java.util.Set;
 @Table(name = "adventures")
 public class Adventure {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
@@ -20,7 +21,7 @@ public class Adventure {
     @Column(name = "story")
     private String story;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name = "first_step_id")
     private Step firstStep;
 
