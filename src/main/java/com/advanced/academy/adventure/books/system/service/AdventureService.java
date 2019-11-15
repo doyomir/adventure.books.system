@@ -2,6 +2,7 @@ package com.advanced.academy.adventure.books.system.service;
 
 import com.advanced.academy.adventure.books.system.models.Tag;
 import com.advanced.academy.adventure.books.system.models.adventure.Adventure;
+import com.advanced.academy.adventure.books.system.models.adventure.Choice;
 import com.advanced.academy.adventure.books.system.repository.AdventureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,10 @@ public class AdventureService {
     }
 
     public Adventure createOrUpdate(Adventure adventure){
-        return adventureRepository.save(adventure);
+        Adventure result = adventureRepository.save(adventure);
+        result.getFirstStep().setChoiceList(null);
+
+        return result;
 
     }
 

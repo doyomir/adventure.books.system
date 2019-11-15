@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Table(name = "heroes")
 public class Hero {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
     @Column(name = "nick_Name")

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface HeroRepository extends CrudRepository<Hero, Integer> {
+public interface HeroRepository extends CrudRepository<Hero, Integer>, GetReference {
 
     @Query("Select h FROM Hero h Where customer.id = :customerId")
     Optional<List<Hero>> getHeroesByCustomerId(@Param("customerId") Integer id);
